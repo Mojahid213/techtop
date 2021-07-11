@@ -1,0 +1,20 @@
+[
+    {   "id":1,
+        "name":"Web Development",
+        "img":"https://i.ibb.co/g7HtKtw/web-develop.jpg",
+        "description":"The best web development service you can get is here. Here we provide all kind of services and support for web development",
+        "price": 559
+    },
+    {   "id":2,
+        "name":"Digital Marketing",
+        "img":"https://i.ibb.co/yVkZShQ/marketing.jpg",
+        "description":"Marketing is one of the most important fector for a company. digital marketing playes a vital role to make a company popular.",
+        "price": 699
+    },
+    {   "id":3,
+        "name":"Graphic Design",
+        "img":"https://i.ibb.co/2MTgkvL/graphic-design.jpg",
+        "description":"We also provide all kind of graphic designing service including banner, fly, poster, logo, icon and etc.",
+        "price": 399
+    }
+]
