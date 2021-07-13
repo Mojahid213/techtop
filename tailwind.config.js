@@ -17,7 +17,7 @@ module.exports = {
       PTSerif: ["PT Serif, serif"],
       RobotoSlab: ["Roboto Slab, serif"],
       Signika: ["Signika Negative, sans-serif"],
-      Ubuntu: ["Ubuntu, sans-serif"]
+      Ubuntu: ["Ubuntu, sans-serif"],
     },
   },
   variants: {

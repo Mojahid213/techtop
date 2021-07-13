@@ -1,11 +1,62 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import reviews from './review.json';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import FeedbackInfo from './FeedbackInfo';
+
+
 
 const Feedback = () => {
+    const [review, setReview] = useState([]);
+    useEffect(() => {
+        setReview(reviews)
+    }, [])
+    console.log(review);
+    const settings = {
+        dots: false,
+        className: "center",
+        centerMode: true,
+        infinite: true,
+        centerPadding: "60px",
+        slidesToShow: 3,
+        speed: 3000,
+        autoplay: true,
+        autoplaySpeed: 1000,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 764,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 2
+                }
+            },
+        ]
+    };
     return (
-        <div className="mt-16">
-            <div className="text-center">
+        <div className="mt-20">
+            {/* Section Heading */}
+            <div className="text-center mb-5">
                 <h1 className="text-4xl font-Signika uppercase font-extrabold">Clients <span className="text-indigo-900">Feedback</span></h1>
-                <p className="font-Ubuntu uppercase">Valuable feedback given by our clients</p>
+                <p className="font-Ubuntu text-lg">Valuable feedback given by our clients</p>
+            </div>
+            {/* review swiper */}
+            <div>
+                <Slider {...settings} className=" overflow-x-hidden">
+                    {
+                        review.map(detail => <FeedbackInfo detail={detail}></FeedbackInfo>)
+                    }
+                </Slider>
             </div>
         </div>
     );

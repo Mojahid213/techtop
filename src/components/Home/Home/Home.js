@@ -4,6 +4,8 @@ import Header from '../Header/Header/Header';
 import Aboutus from '../Aboutus/Aboutus';
 import Services from '../Services/Services/Services';
 import Feedback from '../Feedback/Feedback';
+import Support from '../Support/Support';
+import Footer from '../../../shared/Footer';
 
 const Home = () => {
     return (
@@ -13,6 +15,8 @@ const Home = () => {
             <Aboutus></Aboutus>
             <Services></Services>
             <Feedback></Feedback>
+            <Support></Support>
+            <Footer></Footer>
         </div>
     );
 };
