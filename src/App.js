@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Home from "./components/Home/Home/Home";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function App() {
+  useEffect(() => {
+    AOS.init();
+  }, [])
   return (
     <Router>
       <Switch>

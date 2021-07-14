@@ -7,7 +7,7 @@ const Support = () => {
             <div className="text-center mb-10 md:mb-2">
                 <h1 className="text-4xl font-Signika uppercase font-extrabold">our <span className="text-indigo-900">supports</span></h1>
             </div>
-            <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-x-4">
+            <div data-aos="fade-up" data-aos-duration="2000" className="flex flex-col-reverse md:flex-row justify-center items-center gap-x-4">
                 {/* content */}
                 <div className="flex flex-1 flex-col justify-center items-center text-center md:text-left md:pt-5">
                     <h1 className="uppercase text-3xl md:text-4xl font-RobotoSlab font-extrabold">get the support whenever you want.</h1>
