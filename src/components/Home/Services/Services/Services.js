@@ -7,7 +7,7 @@ const Services = () => {
     const [data, setData] = useState([]);
     useEffect(() => {
         setData(AllService)
-    }, [])
+    }, [data])
     return (
         <div className="mt-12">
             <div className="text-center mb-10">
