@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { useEffect } from 'react/cjs/react.development';
+import React, { useEffect, useState } from 'react';
 import AllService from '../service.json'
 import ServiceInfo from '../ServiceInfo/ServiceInfo';
 
