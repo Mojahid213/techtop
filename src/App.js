@@ -7,6 +7,8 @@ import {
 } from "react-router-dom";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Login from "./components/Login/Login";
+import NotMatch from "./components/NotMatch/NotMatch";
 
 function App() {
   useEffect(() => {
@@ -18,8 +20,14 @@ function App() {
         <Route path="/home">
           <Home></Home>
         </Route>
-        <Route path="/">
+        <Route path="/login">
+          <Login></Login>
+        </Route>
+        <Route exact path="/">
           <Home></Home>
+        </Route>
+        <Route path="*">
+          <NotMatch></NotMatch>
         </Route>
       </Switch>
     </Router>

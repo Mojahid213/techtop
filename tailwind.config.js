@@ -3,6 +3,10 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      width: {
+        '102': '28rem',
+        '108': '32rem'
+      },
       colors: {
         "cs-black": "#010b13",
         "cs-orange": "#ff5317",

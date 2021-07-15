@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -28,7 +29,7 @@ const Navbar = () => {
             <nav className="block md:flex items-center">
                 {/* Navbrand and toggle menubar */}
                 <div className="flex items-center">
-                    <h1 className={scrolled ? "font-Damion font-bold text-3xl text-white transition duration-500" : "font-Damion font-bold text-3xl text-black"}><a href="/">TechTop<span className="text-red-600">.</span></a></h1>
+                    <h1 className={scrolled ? "font-Damion font-bold text-3xl text-white transition duration-500" : "font-Damion font-bold text-3xl text-black"}><Link to="/">TechTop<span className="text-red-600">.</span></Link></h1>
                     <div className="flex flex-1 justify-end md:hidden">
                         <FontAwesomeIcon id="the_btn" className={scrolled ? "text-white text-xl cursor-pointer" : "text-black text-xl cursor-pointer"} icon={faBars} />
                     </div>
@@ -39,7 +40,7 @@ const Navbar = () => {
                     <li className=" mt-4 md:mt-0"><a href="/#">about</a></li>
                     <li className=" mt-4 md:mt-0"><a href="/#">services</a></li>
                     <li className=" mt-4 md:mt-0"><a href="/#">contact</a></li>
-                    <li className="mt-4 md:mt-0"><button className={scrolled ? "bg-white px-5 py-2 text-black hover:text-white rounded-md hover:bg-indigo-400 transition duration-300 ease-in-out" : "bg-black px-5 py-2 text-white rounded-md hover:bg-cs-ebony transition duration-300 ease-in-out"}>LOGIN</button></li>
+                    <li className="mt-4 md:mt-0"><Link to="/login"><button className={scrolled ? "bg-white px-5 py-2 text-black hover:text-white rounded-md hover:bg-indigo-400 transition duration-300 ease-in-out" : "bg-black px-5 py-2 text-white rounded-md hover:bg-cs-ebony transition duration-300 ease-in-out"}>LOGIN</button></Link></li>
                 </ul>
             </nav>
         </div>
