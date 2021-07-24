@@ -106,7 +106,7 @@ const ServicePlanCard = ({ details, category }) => {
                         < div >
                             <p> <FontAwesomeIcon className="text-green-500" icon={faCheckCircle} /> Logo and Banner Design</p>
                             <p> <FontAwesomeIcon className="text-green-500" icon={faCheckCircle} /> Packaging Design</p>
-                            <p> <FontAwesomeIcon className="text-green-500" icon={faCheckCircle} /> Unlimited revisions</p>
+                            <p> <FontAwesomeIcon className="text-green-500" icon={faCheckCircle} /> 20 Times Revision</p>
                             <p> <FontAwesomeIcon className="text-green-500" icon={faCheckCircle} /> Labeling and Cover Design</p>
                             <p> <FontAwesomeIcon className="text-green-500" icon={faCheckCircle} /> 3D Graphic Design</p>
                             <p> <FontAwesomeIcon className="text-green-500" icon={faCheckCircle} /> Vector and Illustration Design</p>
