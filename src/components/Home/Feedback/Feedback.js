@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import reviews from './review.json';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import FeedbackInfo from './FeedbackInfo';
+import axios from 'axios';
 
 
 
 const Feedback = () => {
     const [review, setReview] = useState([]);
     useEffect(() => {
-        setReview(reviews)
+        axios.get('http://localhost:5000/reviews')
+            .then(response => setReview(response.data))
     }, [])
-    console.log(review);
     const settings = {
         dots: false,
         className: "center",
@@ -54,7 +54,7 @@ const Feedback = () => {
             <div>
                 <Slider {...settings} className=" overflow-x-hidden">
                     {
-                        review.map(detail => <FeedbackInfo detail={detail}></FeedbackInfo>)
+                        review.map(detail => <FeedbackInfo detail={detail} key={detail.id}></FeedbackInfo>)
                     }
                 </Slider>
             </div>
