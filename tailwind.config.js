@@ -16,6 +16,9 @@ module.exports = {
         "cs-ebony": "#282c35",
       }
     },
+    container: {
+      center: true,
+    },
     fontFamily: {
       Damion: ["Damion, cursive"],
       PTSerif: ["PT Serif, serif"],
@@ -25,7 +28,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      opacity: ['disabled'],
+    },
   },
   plugins: [],
 }

@@ -17,12 +17,15 @@ const Navbar = () => {
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
-            if (window.scrollY >= 100) {
+            if (window.scrollY >= 80) {
                 setScrolled(true)
             } else {
                 setScrolled(false)
             }
         })
+        return () => {
+            setScrolled()
+        };
     }, [])
     return (
         <div className={scrolled ? "px-10 sm:px-16 lg:px-24 py-4 bg-cs-black sticky top-0 z-50 transition duration-500 ease-in-out" : "px-10 sm:px-16 lg:px-24 py-4 sticky top-0 z-50"}>

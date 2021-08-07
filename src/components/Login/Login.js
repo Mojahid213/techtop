@@ -2,6 +2,11 @@ import React, { useContext, useState } from 'react';
 import Navbar from '../../shared/Navbar'
 import axios from 'axios';
 import { UserContext } from '../../App';
+import cogoToast from 'cogo-toast';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from "react-loader-spinner";
+
+
 
 const Login = () => {
     // User context
@@ -24,13 +29,17 @@ const Login = () => {
         isEmailValid: true,
         isPassValid: true,
         isConfPassValid: true,
-    })
+    });
+
+    // loading state
+    const [loading, setLoading] = useState(false);
 
     // Form submit handle
     const handleSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         // For user SIGNUP
         if (SignStatus.signup && IsValid.firstname && IsValid.lastname && IsValid.email && IsValid.password && IsValid.confirmpass) {
+            setLoading(true);
             const theUserName = IsValid.firstname + " " + IsValid.lastname;
             axios.post('http://localhost:5000/auth/local/register', {
                 username: theUserName,
@@ -38,28 +47,43 @@ const Login = () => {
                 password: IsValid.password,
             })
                 .then(response => {
-                    sessionStorage.setItem('token', response.data.jwt)
+                    const Jwt = {
+                        success: true,
+                        jwt: response.data.jwt
+                    };
+                    sessionStorage.setItem('token', JSON.stringify(Jwt));
                     UserInfo.dispatch({
                         type: "USERINFO",
                         name: IsValid.firstname,
                         email: IsValid.email
-                    })
+                    });
+                    e.target.reset();
+                    setLoading(false);
+                    cogoToast.success('successfully signed up', {
+                        heading: 'SIGNED UP'
+                    });
                 })
                 .catch(error => {
-                    // Handle error.
-                    console.log('An error occurred:', error.response);
+                    setLoading(false);
+                    cogoToast.error(error.response.data.message[0].messages[0].message, {
+                        heading: 'Error',
+                    });
                 });
         }
 
         // ...For the Login...
         if (!SignStatus.signup && IsValid.email && IsValid.password) {
-
+            setLoading(true);
             axios.post('http://localhost:5000/auth/local', {
                 identifier: IsValid.email,
                 password: IsValid.password,
             })
                 .then(response => {
-                    sessionStorage.setItem('token', response.data.jwt);
+                    const Jwt = {
+                        success: true,
+                        jwt: response.data.jwt
+                    }
+                    sessionStorage.setItem('token', JSON.stringify(Jwt));
                     const fullname = response.data.user.username;
                     const firstname = fullname.split(" ")[0];
                     UserInfo.dispatch({
@@ -67,10 +91,17 @@ const Login = () => {
                         name: firstname,
                         email: response.data.user.email
                     })
+                    e.target.reset();
+                    setLoading(false);
+                    cogoToast.success('successfully logged in', {
+                        heading: 'LOGGED IN'
+                    });
                 })
                 .catch(error => {
-                    // Handle error.
-                    console.log('An error occurred:', error.response);
+                    setLoading(false);
+                    cogoToast.error(error.response.data.message[0].messages[0].message, {
+                        heading: 'Error',
+                    });
                 });
         }
     }
@@ -156,7 +187,7 @@ const Login = () => {
             <Navbar></Navbar>
             {/* Login and signup form */}
             <div className="flex justify-center mt-16">
-                <form onSubmit={handleSubmit} className="flex flex-col justify-center max-w-md w-full bg-white border-2 border-cs-black px-4 py-6 mx-3 rounded-lg font-Ubuntu">
+                <form data-aos="fade-up" data-aos-duration="1000" onSubmit={handleSubmit} className="flex flex-col justify-center max-w-md w-full bg-white border-2 border-cs-black px-4 py-6 mx-3 rounded-lg font-Ubuntu">
                     {SignStatus.signup ?
                         <h1 className="text-center text-2xl font-RobotoSlab font-bold mb-6">Sign Up</h1>
                         : <h1 className="text-center text-2xl font-RobotoSlab font-bold mb-6">Login</h1>
@@ -189,8 +220,32 @@ const Login = () => {
                         ]
                     }
                     {SignStatus.signup ?
-                        <button className="px-5 py-3 bg-cs-black text-white font-bold rounded-md hover:bg-gray-800 transition duration-200 ease-in-out">Create Account</button>
-                        : <button className="px-5 py-3 bg-cs-black text-white font-bold rounded-md hover:bg-gray-800 transition duration-200 ease-in-out">Login</button>
+                        <button className="px-5 py-3 bg-cs-black text-white font-bold rounded-md hover:bg-gray-800 transition duration-200 ease-in-out" disabled={loading}>
+                            {loading ?
+                                <div className="flex justify-center">
+                                    <Loader
+                                        type="ThreeDots"
+                                        color="#ffffff"
+                                        height={24}
+                                        width={50}
+                                    />
+                                </div>
+                                : "Create Account"
+                            }
+                        </button>
+                        : <button className="px-5 py-3 bg-cs-black text-white font-bold rounded-md hover:bg-gray-800 transition duration-200 ease-in-out" disabled={loading}>
+                            {loading ?
+                                <div className="flex justify-center">
+                                    <Loader
+                                        type="ThreeDots"
+                                        color="#ffffff"
+                                        height={24}
+                                        width={50}
+                                    />
+                                </div>
+                                : "Login"
+                            }
+                        </button>
                     }
                     <div className="mt-3">
                         {SignStatus.signup ?
