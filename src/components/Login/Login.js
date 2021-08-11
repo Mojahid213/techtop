@@ -1,16 +1,21 @@
 import React, { useContext, useState } from 'react';
 import Navbar from '../../shared/Navbar'
 import axios from 'axios';
-import { UserContext } from '../../App';
 import cogoToast from 'cogo-toast';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
+import { useHistory, useLocation } from 'react-router-dom';
+import { UserContext } from '../../App';
 
 
 
 const Login = () => {
-    // User context
-    const UserInfo = useContext(UserContext);
+    let history = useHistory();
+    let location = useLocation();
+    let { from } = location.state || { from: { pathname: "/" } };
+
+    // user context api
+    const [user, dispatch] = useContext(UserContext);
 
     // Login and signup toggle
     const [SignStatus, setSignStatus] = useState({
@@ -52,21 +57,44 @@ const Login = () => {
                         jwt: response.data.jwt
                     };
                     sessionStorage.setItem('token', JSON.stringify(Jwt));
-                    UserInfo.dispatch({
-                        type: "USERINFO",
-                        name: IsValid.firstname,
-                        email: IsValid.email
-                    });
+                    // making text avatar with user name
+                    const userName = response.data.user.username;
+                    const nameSplit = userName.split(' ', 2);
+                    if (nameSplit.length > 1) {
+                        const firstLetter = nameSplit[0].split('')[0];
+                        const lastLetter = nameSplit[1].split('')[0];
+                        const theLetter = firstLetter + lastLetter;
+                        dispatch({
+                            type: 'USERINFO',
+                            name: response.data.user.username,
+                            email: response.data.user.email,
+                            avatar: theLetter
+                        })
+                    } else {
+                        const theLetter = nameSplit[0].split('')[0];
+                        dispatch({
+                            type: 'USERINFO',
+                            name: response.data.user.username,
+                            email: response.data.user.email,
+                            avatar: theLetter
+                        })
+                    }
+                    // dispatch({
+                    //     type: 'USERINFO',
+                    //     name: response.data.user.username,
+                    //     email: response.data.user.email,
+                    // })
                     e.target.reset();
                     setLoading(false);
-                    cogoToast.success('successfully signed up', {
+                    cogoToast.success('', {
                         heading: 'SIGNED UP'
                     });
+                    history.replace(from);
                 })
                 .catch(error => {
                     setLoading(false);
-                    cogoToast.error(error.response.data.message[0].messages[0].message, {
-                        heading: 'Error',
+                    cogoToast.error('', {
+                        heading: error.response.data.message[0].messages[0].message,
                     });
                 });
         }
@@ -84,23 +112,44 @@ const Login = () => {
                         jwt: response.data.jwt
                     }
                     sessionStorage.setItem('token', JSON.stringify(Jwt));
-                    const fullname = response.data.user.username;
-                    const firstname = fullname.split(" ")[0];
-                    UserInfo.dispatch({
-                        type: "USERINFO",
-                        name: firstname,
-                        email: response.data.user.email
-                    })
+                    // making text avatar with user name
+                    const userName = response.data.user.username;
+                    const nameSplit = userName.split(' ', 2);
+                    if (nameSplit.length > 1) {
+                        const firstLetter = nameSplit[0].split('')[0];
+                        const lastLetter = nameSplit[1].split('')[0];
+                        const theLetter = firstLetter + lastLetter;
+                        dispatch({
+                            type: 'USERINFO',
+                            name: response.data.user.username,
+                            email: response.data.user.email,
+                            avatar: theLetter
+                        })
+                    } else {
+                        const theLetter = nameSplit[0].split('')[0];
+                        dispatch({
+                            type: 'USERINFO',
+                            name: response.data.user.username,
+                            email: response.data.user.email,
+                            avatar: theLetter
+                        })
+                    }
+                    // dispatch({
+                    //     type: 'USERINFO',
+                    //     name: response.data.user.username,
+                    //     email: response.data.user.email,
+                    // })
                     e.target.reset();
                     setLoading(false);
-                    cogoToast.success('successfully logged in', {
+                    cogoToast.success('', {
                         heading: 'LOGGED IN'
                     });
+                    history.replace(from);
                 })
                 .catch(error => {
                     setLoading(false);
-                    cogoToast.error(error.response.data.message[0].messages[0].message, {
-                        heading: 'Error',
+                    cogoToast.error('', {
+                        heading: error.response.data.message[0].messages[0].message,
                     });
                 });
         }

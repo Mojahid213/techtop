@@ -7,6 +7,7 @@ import Feedback from '../Feedback/Feedback';
 import Support from '../Support/Support';
 import Footer from '../../../shared/Footer';
 
+
 const Home = () => {
     return (
         <div>

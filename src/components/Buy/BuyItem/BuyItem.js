@@ -4,7 +4,7 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 
 const BuyItem = () => {
-    const [service, setService] = useState(JSON.parse(sessionStorage.getItem("service")));
+    const [service] = useState(JSON.parse(sessionStorage.getItem("service")));
     // Heading service name state
     const [name, setName] = useState('');
     useEffect(() => {

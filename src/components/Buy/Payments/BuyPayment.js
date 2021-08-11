@@ -5,10 +5,10 @@ import PaymentForm from './PaymentForm';
 
 const stripePromise = loadStripe('pk_test_51JJYEpEvHzZ8vXqANLoMuKjhDpA9kJyIlsqRHgks2ZcxsSjFOdnBmgs5GwqY6ozcur6BD9Xu68CRsydd94fQOpmJ00SWNBEAnE');
 
-const BuyPayment = () => {
+const BuyPayment = ({ details }) => {
     return (
         <Elements stripe={stripePromise}>
-            <PaymentForm></PaymentForm>
+            <PaymentForm user={details}></PaymentForm>
         </Elements>
     );
 };

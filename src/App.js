@@ -11,15 +11,18 @@ import Login from "./components/Login/Login";
 import NotMatch from "./components/NotMatch/NotMatch";
 import ServicePlan from "./components/ServicePlan/ServicePlan";
 import Buy from "./components/Buy/Buy/Buy";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import axios from "axios";
 
 
-// user context
+// // user context
 export const UserContext = createContext();
 
 // usereducer USER STATE initialstate
 const initialState = {
   name: '',
-  email: ''
+  email: '',
+  avatar: '',
 }
 // USER STATE  reducer function
 const reducer = (state, action) => {
@@ -27,7 +30,8 @@ const reducer = (state, action) => {
     case "USERINFO":
       return {
         name: action.name,
-        email: action.email
+        email: action.email,
+        avatar: action.avatar,
       }
     default:
       return state
@@ -36,16 +40,53 @@ const reducer = (state, action) => {
 
 function App() {
   // User state
-  const [user, dispatch] = useReducer(reducer, initialState)
+  const [user, dispatch] = useReducer(reducer, initialState);
+  useEffect(() => {
+    if (JSON.parse(sessionStorage.getItem('token'))) {
+      axios.get('http://localhost:5000/users/me', {
+        headers: {
+          Authorization: `Bearer ${JSON.parse(sessionStorage.getItem('token')).jwt}`
+        }
+      })
+        .then(res => {
+          const userName = res.data.username;
+          const nameSplit = userName.split(' ', 2);
+          if (nameSplit.length > 1) {
+            const firstLetter = nameSplit[0].split('')[0];
+            const lastLetter = nameSplit[1].split('')[0];
+            const theLetter = firstLetter + lastLetter;
+            dispatch({
+              type: 'USERINFO',
+              name: res.data.username,
+              email: res.data.email,
+              avatar: theLetter
+            })
+          } else {
+            const theLetter = nameSplit[0].split('')[0];
+            dispatch({
+              type: 'USERINFO',
+              name: res.data.username,
+              email: res.data.email,
+              avatar: theLetter
+            })
+          }
+        })
+        .then(err => {
+          if (err) {
+            console.log(err)
+          }
+        })
+    }
+  }, [])
 
   // Initializing AOS
   useEffect(() => {
     AOS.init();
   }, []);
 
-  // Loading Spinner
+  // Loading Spinner state
   const [Load, setLoad] = useState(true)
-
+  // Showing and removing the Loading Spinner
   useEffect(() => {
     const theLoader = document.querySelector(".loader");
     let spinnerDiv = document.querySelector(".spinner_div");
@@ -56,13 +97,12 @@ function App() {
     }
   }, [])
 
-
   if (Load) {
     return null
   }
-  console.log(user);
+
   return (
-    <UserContext.Provider value={{ dispatch }}>
+    <UserContext.Provider value={[user, dispatch]}>
       <Router>
         <Switch>
           <Route path="/home">
@@ -71,9 +111,9 @@ function App() {
           <Route path="/services/:category">
             <ServicePlan></ServicePlan>
           </Route>
-          <Route path="/service/buy">
+          <PrivateRoute path="/service/buy">
             <Buy></Buy>
-          </Route>
+          </PrivateRoute>
           <Route path="/login">
             <Login></Login>
           </Route>
