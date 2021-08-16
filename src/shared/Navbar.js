@@ -68,7 +68,7 @@ const Navbar = () => {
                             <ul id="profile_card" className="hidden absolute right-1/2 md:right-0 -mr-16 md:-mr-0 mt-3 bg-white border shadow-lg rounded-lg text-black p-3 w-52 md:w-60">
                                 <div className="cursor-pointer flex justify-center items-center h-16 w-16 md:h-20 md:w-20 bg-black text-white font-RobotoSlab rounded-full p-1.5 mx-auto"><span className="text-3xl md:text-4xl">{user.avatar}</span></div>
                                 <li><h1 className="text-lg font-bold font-RobotoSlab text-center">{user.name}</h1></li>
-                                <li><button className="px-4 py-2 mt-4 bg-cs-black text-white text-lg rounded-lg focus:ring-4 ring-gray-600 hover:bg-cs-ebony transition duration-300">Dashboard</button></li>
+                                <li><Link to="/dashboard"><button className="px-4 py-2 mt-4 bg-cs-black text-white text-lg rounded-lg focus:ring-4 ring-gray-600 hover:bg-cs-ebony transition duration-300">Dashboard</button></Link></li>
                                 <li className="mt-4 cursor-pointer text-left"><p onClick={logout} className="normal-case hover:text-blue-700"><FontAwesomeIcon icon={faSignOutAlt} /> Logout</p></li>
                             </ul>
                         </li>

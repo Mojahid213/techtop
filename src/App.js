@@ -13,6 +13,7 @@ import ServicePlan from "./components/ServicePlan/ServicePlan";
 import Buy from "./components/Buy/Buy/Buy";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import axios from "axios";
+import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
 
 
 // // user context
@@ -113,6 +114,9 @@ function App() {
           </Route>
           <PrivateRoute path="/service/buy">
             <Buy></Buy>
+          </PrivateRoute>
+          <PrivateRoute path="/dashboard">
+            <Dashboard></Dashboard>
           </PrivateRoute>
           <Route path="/login">
             <Login></Login>

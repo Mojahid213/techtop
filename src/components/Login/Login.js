@@ -87,7 +87,7 @@ const Login = () => {
                     e.target.reset();
                     setLoading(false);
                     cogoToast.success('', {
-                        heading: 'SIGNED UP'
+                        heading: 'Signed Up'
                     });
                     history.replace(from);
                 })
@@ -142,7 +142,7 @@ const Login = () => {
                     e.target.reset();
                     setLoading(false);
                     cogoToast.success('', {
-                        heading: 'LOGGED IN'
+                        heading: 'Logged In'
                     });
                     history.replace(from);
                 })

@@ -4,6 +4,8 @@ import { UserContext } from '../../../App';
 import cogoToast from 'cogo-toast';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from "react-loader-spinner";
 
 
 
@@ -16,6 +18,8 @@ const PaymentForm = () => {
     const [service] = useState(JSON.parse(sessionStorage.getItem("service")));
     // purchased state
     const [purchased, setpurchased] = useState(false);
+    // loading state
+    const [loading, setLoading] = useState(false);
 
     const [info, setInfo] = useState({
         name: '',
@@ -52,6 +56,7 @@ const PaymentForm = () => {
     const handleSubmit = async (event) => {
         // Block native form submission.
         event.preventDefault();
+        setLoading(true)
 
         if (!stripe || !elements) {
             // Stripe.js has not loaded yet. Make sure to disable
@@ -68,6 +73,7 @@ const PaymentForm = () => {
         });
 
         if (error) {
+            setLoading(false)
             cogoToast.error('', {
                 heading: error.message
             });
@@ -85,6 +91,7 @@ const PaymentForm = () => {
                         Authorization: `Bearer ${JSON.parse(sessionStorage.getItem('token')).jwt}`
                     },
                 })
+            setLoading(false)
             event.target.reset();
             setpurchased(true);
             cardElement.clear();
@@ -119,7 +126,17 @@ const PaymentForm = () => {
                 <CardElement id="card" className="ring-2 rounded-md px-1 py-2" />
             </div>
             <button type="submit" className="px-4 py-3 font-Signika bg-black hover:bg-cs-ebony transition duration-300 text-white rounded-md mt-1" disabled={!stripe}>
-                Purchase
+                {loading ?
+                    <div className="flex justify-center">
+                        <Loader
+                            type="ThreeDots"
+                            color="#ffffff"
+                            height={24}
+                            width={60}
+                        />
+                    </div>
+                    : "Purchase"
+                }
             </button>
         </form>
 
