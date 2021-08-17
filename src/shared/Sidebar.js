@@ -34,7 +34,7 @@ const Sidebar = () => {
     }
     return (
         <div className="flex flex-col w-full md:w-52 lg:w-60 xl:w-64 h-full md:h-screen py-8 bg-white shadow-md border">
-            <div className="flex flex-col items-center mt-6 -mx-2">
+            <div className="flex flex-col items-center mt-5 -mx-2">
                 <div className="cursor-pointer flex justify-center items-center h-16 w-16 md:h-20 md:w-20 bg-black text-white font-RobotoSlab rounded-full p-1.5 mx-auto"><span className="text-3xl md:text-4xl">{user.avatar}</span></div>
                 <h4 className="mx-2 mt-2 font-bold text-center md:text-lg text-gray-800 font-RobotoSlab uppercase">{user.name}</h4>
                 <p className="mx-2 mt-1 text-sm font-medium text-center text-gray-700 font-RobotoSlab">{user.email}</p>

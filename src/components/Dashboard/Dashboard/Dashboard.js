@@ -10,7 +10,7 @@ const Dashboard = () => {
                     <Sidebar></Sidebar>
                 </div>
                 <div className="flex-1 px-5 md:px-10 md:mt-5">
-                    <h1 className="text-3xl font-Ubuntu font-bold text-center mb-1">Your Dashboard</h1>
+                    <h1 className="text-3xl font-Ubuntu font-bold text-center mb-1">My Dashboard</h1>
                     <hr className="mb-8" />
                     <DashboardItem></DashboardItem>
                 </div>

@@ -13,7 +13,7 @@ const Buy = () => {
     const [loading, setLoading] = useState(true)
     useEffect(() => {
 
-        if (user) {
+        if (user.name && user.email) {
             setLoading(false);
         }
     }, [user])
