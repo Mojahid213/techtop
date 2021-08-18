@@ -66,7 +66,7 @@ const Footer = () => {
                 </div>
                 <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 mt-16 lg:mt-20 border-t-2 border-gray-700 pt-8 ">
                     <div className="text-sm space-y-4 md:space-y-1 text-center md:text-left">
-                        <p>&copy;2021 Company. All rights reserved. | Made by <span className="font-bold hover:text-white transition duration-150"><a href="https://devmojahid.netlify.app/" target="blank">Mojahidul Islam</a></span></p>
+                        <p>&copy;2021 Company. All rights reserved. | Made with ❤️ by <span className="font-bold hover:text-white transition duration-150"><a href="https://devmojahid.netlify.app/" target="blank">Mojahidul Islam</a></span></p>
                         <p>TechTop is a digital service providing company</p>
                     </div>
                     <div className="flex items-baseline space-x-2">

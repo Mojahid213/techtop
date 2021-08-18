@@ -14,6 +14,10 @@ import Buy from "./components/Buy/Buy/Buy";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import axios from "axios";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
+import Purchases from './components/Dashboard/Purchases/Purchases'
+import Modal from 'react-modal'
+
+Modal.setAppElement('#root');
 
 
 // // user context
@@ -115,8 +119,11 @@ function App() {
           <PrivateRoute path="/service/buy">
             <Buy></Buy>
           </PrivateRoute>
-          <PrivateRoute path="/dashboard">
+          <PrivateRoute path="/profile/dashboard">
             <Dashboard></Dashboard>
+          </PrivateRoute>
+          <PrivateRoute path="/profile/purchases">
+            <Purchases></Purchases>
           </PrivateRoute>
           <Route path="/login">
             <Login></Login>

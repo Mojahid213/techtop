@@ -5,10 +5,14 @@ import axios from 'axios'
 import { UserContext } from '../../../App';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
+import Modal from 'react-modal'
 
 
 const DashboardItem = () => {
     const [user] = useContext(UserContext);
+
+    // Modal open state
+    const [modalOpen, setModalOpen] = useState(false);
 
     // Loading State
     const [purchaseLoading, setPurchaseLoading] = useState(true);
@@ -117,18 +121,31 @@ const DashboardItem = () => {
                     }
                 </div>
             </div>
+            {/* Modal */}
+            <Modal
+                isOpen={modalOpen}
+                onRequestClose={() => setModalOpen(false)}
+                className="bg-white w-3/4 sm:max-w-xs sm:w-full h-64 sm:h-56 absolute top-0 right-0 left-0 bottom-0 m-auto p-5 border rounded-lg shadow-lg overflow-auto"
+            >
+                <h1 className="font-RobotoSlab text-2xl text-center text-red-500">Sorry!</h1>
+                <hr className="mt-1" />
+                <p className="font-Signika mt-5 text-justify">Updating/Editing profile info is not available now but this feature will be added soon.</p>
+                <div className="flex justify-center mt-3">
+                    <button onClick={() => setModalOpen(false)} className="px-5 py-2 font-Signika rounded-lg bg-black text-white ring-black focus:ring-2 focus:ring-offset-2 transition duration-300">OK</button>
+                </div>
+            </Modal>
             {/* User Profile */}
             <div className="mt-10 mb-5 md:mb-0 shadow-lg rounded-lg border px-5 py-3">
                 <div className="flex flex-row justify-between">
                     <h1 className="font-Ubuntu text-2xl font-bold">My Profile</h1>
-                    <button className="font-Ubuntu hover:text-indigo-700"><FontAwesomeIcon icon={faEdit} /> Edit</button>
+                    <button onClick={() => setModalOpen(true)} className="font-Ubuntu hover:text-indigo-700 border-0 outline-none"><FontAwesomeIcon icon={faEdit} /> Edit</button>
                 </div>
                 <hr className="mt-2 mb-3" />
                 <div className="flex flex-col sm:flex-row gap-x-6">
                     {/* profile image */}
                     <div className="flex flex-col justify-center items-center">
                         <div className="cursor-pointer flex justify-center items-center h-28 w-28 md:h-32 md:w-32 bg-black text-white font-RobotoSlab rounded-full p-1.5 mx-auto"><span className="text-5xl md:text-6xl">{user.avatar}</span></div>
-                        <button className="my-4 h-10 w-28 font-Signika text-base border-2 border-black hover:bg-black hover:text-white transition duration-300 ease-in-out rounded-lg"><FontAwesomeIcon icon={faEdit} /> Edit Profile</button>
+                        <button onClick={() => setModalOpen(true)} className="my-4 h-10 w-28 font-Signika text-base border-2 border-black hover:bg-black hover:text-white transition duration-300 ease-in-out rounded-lg"><FontAwesomeIcon icon={faEdit} /> Edit Profile</button>
                     </div>
                     {/* profile info */}
                     <div className="flex flex-col mt-3">
