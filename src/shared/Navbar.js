@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
 import { UserContext } from '../App'
+import { Link as Scroll } from 'react-scroll'
 
 
 
@@ -58,10 +59,10 @@ const Navbar = () => {
                 </div>
                 {/* Navbar menus */}
                 <ul id="Menu_list" className={scrolled ? "hidden md:flex md:flex-1 gap-8 md:justify-end items-center text-center text-white uppercase font-Signika transition duration-500" : "hidden md:flex md:flex-1 gap-8 md:justify-end items-center text-center text-black uppercase font-Signika"}>
-                    <li className=" mt-7 md:mt-0"><a href="/#">home</a></li>
-                    <li className=" mt-4 md:mt-0"><a href="/#">about</a></li>
-                    <li className=" mt-4 md:mt-0"><a href="/#">services</a></li>
-                    <li className=" mt-4 md:mt-0"><a href="/#">contact</a></li>
+                    <li className=" mt-7 md:mt-0"><Link to="/">home</Link></li>
+                    <li className=" mt-4 md:mt-0"><Scroll className="cursor-pointer" to="about" smooth={true}>about</Scroll></li>
+                    <li className=" mt-4 md:mt-0"><Scroll className="cursor-pointer" to="services" smooth={true}>services</Scroll></li>
+                    <li className=" mt-4 md:mt-0"><Scroll className="cursor-pointer" to="support" smooth={true}>support</Scroll></li>
                     {JSON.parse(sessionStorage.getItem('token')) ?
                         <li className="mt-4 md:mt-0 relative text-center">
                             <button id="profile_pic" className={scrolled ? "flex justify-center h-10 w-10 bg-white text-black text-base font-RobotoSlab rounded-full p-1.5 mx-auto border-2 border-gray-400 hover:border-opacity-0 ring-indigo-400 hover:ring-4 transition duration-300" : "flex justify-center h-10 w-10 bg-black text-white text-base font-RobotoSlab rounded-full p-1.5 mx-auto border-2 border-gray-400 hover:border-opacity-0 ring-indigo-400 hover:ring-4 transition duration-300"}>{user.avatar}</button>

@@ -18,6 +18,7 @@ import Purchases from './components/Dashboard/Purchases/Purchases'
 import Modal from 'react-modal'
 import Review from "./components/Dashboard/Review/Review";
 
+
 Modal.setAppElement('#root');
 
 

@@ -13,12 +13,18 @@ const FeedbackInfo = ({ detail }) => {
                     </div>
                 }
             </div>
-            <div className="overflow-y-auto h-24">
+            <div className="overflow-y-auto h-28">
                 <p className="mt-2 text-gray-700 font-Ubuntu"><span className="text-2xl font-bold">❝ </span>{detail.description}</p>
             </div>
-            <div className="flex flex-col justify-end mt-4">
-                <h1 className="text-lg font-RobotoSlab font-semibold text-indigo-900">{detail.name}</h1>
-                <p className="font-Ubuntu text-sm font-semibold">{detail.position}, {detail.company}</p>
+            <div className="flex flex-col justify-end mt-1">
+                {detail.position && detail.company ?
+                    <h1 className="text-lg font-RobotoSlab font-semibold text-indigo-900">{detail.name}</h1>
+                    :
+                    <h1 className="text-lg font-RobotoSlab font-semibold text-indigo-900 mt-3.5 mb-1.5">{detail.name}</h1>
+                }
+                {detail.position && detail.company &&
+                    <p className="font-Ubuntu text-sm font-semibold">{detail.position}, {detail.company}</p>
+                }
             </div>
         </div>
     );

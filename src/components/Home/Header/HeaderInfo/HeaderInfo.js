@@ -1,5 +1,7 @@
 import React from 'react';
-import BanngerImg from '../../../../assets/Img/banner-3.png'
+import BanngerImg from '../../../../assets/Img/banner-3.png';
+import { Link } from 'react-scroll'
+
 
 const HeaderInfo = () => {
     return (
@@ -9,7 +11,7 @@ const HeaderInfo = () => {
                 <div className="flex flex-col flex-1 items-center justify-center text-center lg:text-left">
                     <h1 className="text-4xl lg:text-5xl font-RobotoSlab font-extrabold mb-4 tracking-wide">START AND GROW YOUR DIGITAL BUSINESS WITH US</h1>
                     <p className="text-lg font-semibold font-Ubuntu lg:leading-relaxed">Our dream is to make others dream come true. We provide all kinds of services needed to start a digital business. Whether you already have an online business or willing to start any startup, we are always with you.</p>
-                    <button className="px-5 py-3 bg-cs-black text-white rounded-lg font-bold hover:bg-cs-ebony transition duration-300 mt-5">Get Started</button>
+                    <button className="px-5 py-3 bg-cs-black text-white rounded-lg font-bold hover:bg-cs-ebony transition duration-300 mt-5"><Link to="services" smooth={true}>Get Started</Link></button>
                 </div>
                 {/* The content image */}
                 <div className="justify-center flex flex-1 items-center z-10">

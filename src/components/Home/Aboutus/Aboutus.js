@@ -3,7 +3,7 @@ import AboutImg from '../../../assets/Img/banner-2.png'
 
 const Aboutus = () => {
     return (
-        <div className="mt-10 pt-5 pb-5 bg-gray-50 relative">
+        <div id="about" className="mt-10 pt-5 pb-5 bg-gray-50 relative">
             <h1 className="text-4xl font-Signika font-extrabold text-center mb-10"><span className="text-indigo-900">WHO</span> WE ARE</h1>
             <div className="flex flex-col md:flex-row gap-10 px-5 md:px-10 justify-center items-center">
                 {/* ---- The image div ---- */}

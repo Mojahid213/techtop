@@ -31,7 +31,7 @@ const ReviewItem = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setLoading(true);
-        if (details.name && details.avatar && details.company && details.position && details.description) {
+        if (details.name && details.avatar && details.description) {
             // sending data to server
             axios.post('http://localhost:5000/reviews',
                 {
@@ -98,12 +98,12 @@ const ReviewItem = () => {
                     </div>
                     <div className="flex flex-col w-full">
                         <label htmlFor="company" className="font-RobotoSlab text-lg mb-0.5">Company Name:</label>
-                        <input onChange={handleChange} type="text" id="company" name="company" placeholder="Your company name" className="border border-gray-500 focus:border-opacity-0 rounded-md focus:outline-none ring-black focus:ring-2 px-1 py-0.5 text-lg font-Signika transition duration-300 ease-in-out" required />
+                        <input onChange={handleChange} type="text" id="company" name="company" placeholder="Company name(optional)" className="border border-gray-500 focus:border-opacity-0 rounded-md focus:outline-none ring-black focus:ring-2 px-1 py-0.5 text-lg font-Signika transition duration-300 ease-in-out" />
                     </div>
                 </div>
                 <div className="flex flex-col w-full mt-3">
                     <label htmlFor="position" className="font-RobotoSlab text-lg mb-0.5">Your Position:</label>
-                    <input onChange={handleChange} type="text" id="position" name="position" placeholder="Job position in your company" className="border border-gray-500 focus:border-opacity-0 rounded-md focus:outline-none ring-black focus:ring-2 px-1 py-0.5 text-lg font-Signika transition duration-300 ease-in-out" required />
+                    <input onChange={handleChange} type="text" id="position" name="position" placeholder="Job position(optional)" className="border border-gray-500 focus:border-opacity-0 rounded-md focus:outline-none ring-black focus:ring-2 px-1 py-0.5 text-lg font-Signika transition duration-300 ease-in-out" />
                 </div>
                 <div className="flex flex-col w-full mt-3">
                     <label htmlFor="description" className="font-RobotoSlab text-lg mb-0.5">Your Message:</label>

@@ -14,9 +14,13 @@ const Home = () => {
             <Navbar></Navbar>
             <Header></Header>
             <Aboutus></Aboutus>
-            <Services></Services>
+            <div id="services">
+                <Services></Services>
+            </div>
             <Feedback></Feedback>
-            <Support></Support>
+            <div id="support">
+                <Support></Support>
+            </div>
             <Footer></Footer>
         </div>
     );
