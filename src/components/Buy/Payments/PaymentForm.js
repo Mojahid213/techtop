@@ -30,7 +30,6 @@ const PaymentForm = () => {
     })
     useEffect(() => {
         if (user) {
-            // const newInfo = { ...info };
             setInfo({
                 name: user.name,
                 email: user.email,
@@ -125,7 +124,7 @@ const PaymentForm = () => {
                 <label htmlFor="card" className="font-Signika text-lg">Card Info:</label>
                 <CardElement id="card" className="ring-2 rounded-md px-1 py-2" />
             </div>
-            <button type="submit" className="px-4 py-3 font-Signika bg-black hover:bg-cs-ebony transition duration-300 text-white rounded-md mt-1" disabled={!stripe}>
+            <button type="submit" className="px-4 py-3 font-Signika bg-black hover:bg-cs-ebony transition duration-300 text-white rounded-md mt-1" disabled={!stripe || loading}>
                 {loading ?
                     <div className="flex justify-center">
                         <Loader

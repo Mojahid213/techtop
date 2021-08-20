@@ -125,7 +125,7 @@ const DashboardItem = () => {
             <Modal
                 isOpen={modalOpen}
                 onRequestClose={() => setModalOpen(false)}
-                className="bg-white w-3/4 sm:max-w-xs sm:w-full h-64 sm:h-56 absolute top-0 right-0 left-0 bottom-0 m-auto p-5 border rounded-lg shadow-lg overflow-auto"
+                className="bg-white w-3/4 sm:max-w-xs sm:w-full h-64 sm:h-56 absolute top-0 right-0 left-0 bottom-0 m-auto p-4 border rounded-lg shadow-lg overflow-auto"
             >
                 <h1 className="font-RobotoSlab text-2xl text-center text-red-500">Sorry!</h1>
                 <hr className="mt-1" />

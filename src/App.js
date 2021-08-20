@@ -16,6 +16,7 @@ import axios from "axios";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
 import Purchases from './components/Dashboard/Purchases/Purchases'
 import Modal from 'react-modal'
+import Review from "./components/Dashboard/Review/Review";
 
 Modal.setAppElement('#root');
 
@@ -124,6 +125,9 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path="/profile/purchases">
             <Purchases></Purchases>
+          </PrivateRoute>
+          <PrivateRoute path="/profile/review">
+            <Review></Review>
           </PrivateRoute>
           <Route path="/login">
             <Login></Login>

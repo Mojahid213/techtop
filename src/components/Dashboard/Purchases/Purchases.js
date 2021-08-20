@@ -31,7 +31,7 @@ const Purchases = () => {
                                     <span className="mx-4 font-medium">Purchases</span>
                                 </Link>
 
-                                <Link id="review" className="flex items-center text-lg font-Signika px-6 py-2 mt-2" to="/dashboard">
+                                <Link id="review" className="flex items-center text-lg font-Signika px-6 py-2 mt-2" to="/profile/review">
                                     <FontAwesomeIcon icon={faPencilAlt} />
                                     <span className="mx-4 font-medium">Review</span>
                                 </Link>
