@@ -90,7 +90,7 @@ const ReviewItem = () => {
 
     return (
         <div className="flex justify-center">
-            <form onSubmit={handleSubmit} className="max-w-lg w-full px-4 py-5 border-2 border-black shadow-lg rounded-lg mt-5">
+            <form onSubmit={handleSubmit} className="max-w-lg w-full px-4 py-5 border-2 border-black shadow-lg rounded-lg mt-5 mb-5">
                 <div className="flex flex-col md:flex-row gap-x-4 gap-y-2 md:gap-y-0">
                     <div className="flex flex-col w-full">
                         <label htmlFor="name" className="font-RobotoSlab text-lg mb-0.5">Name:</label>
