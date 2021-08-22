@@ -230,7 +230,8 @@ const Login = () => {
             newValidInfo.isConfPassValid = true;
             setIsValid(newValidInfo)
         }
-    }
+    };
+
     return (
         <div>
             <Navbar></Navbar>
