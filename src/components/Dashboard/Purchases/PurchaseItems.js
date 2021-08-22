@@ -16,7 +16,7 @@ const PurchaseItems = () => {
     // Items state
     const [items, setItems] = useState([]);
     useEffect(() => {
-        axios.get(`http://localhost:5000/purchases?email=${user.email}`, {
+        axios.get(`https://tech-top.herokuapp.com/purchases?email=${user.email}`, {
             headers: {
                 Authorization: `Bearer ${JSON.parse(sessionStorage.getItem('token')).jwt}`,
             },

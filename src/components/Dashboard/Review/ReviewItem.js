@@ -33,7 +33,7 @@ const ReviewItem = () => {
         setLoading(true);
         if (details.name && details.avatar && details.description) {
             // sending data to server
-            axios.post('http://localhost:5000/reviews',
+            axios.post('https://tech-top.herokuapp.com/reviews',
                 {
                     name: details.name,
                     avatar: details.avatar,

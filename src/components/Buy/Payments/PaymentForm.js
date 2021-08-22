@@ -77,7 +77,7 @@ const PaymentForm = () => {
                 heading: error.message
             });
         } else {
-            axios.post('http://localhost:5000/purchases',
+            axios.post('https://tech-top.herokuapp.com/purchases',
                 {
                     name: info.name,
                     email: info.email,

@@ -26,7 +26,7 @@ const DashboardItem = () => {
     // Purchase, pending and completed count
     useEffect(() => {
         // purchase count
-        axios.get(`http://localhost:5000/purchases/count?email=${user.email}`, {
+        axios.get(`https://tech-top.herokuapp.com/purchases/count?email=${user.email}`, {
             headers: {
                 Authorization: `Bearer ${JSON.parse(sessionStorage.getItem('token')).jwt}`,
             },
@@ -42,7 +42,7 @@ const DashboardItem = () => {
             })
 
         // pending count
-        axios.get(`http://localhost:5000/purchases/count?email=${user.email}&completed=false`, {
+        axios.get(`https://tech-top.herokuapp.com/purchases/count?email=${user.email}&completed=false`, {
             headers: {
                 Authorization: `Bearer ${JSON.parse(sessionStorage.getItem('token')).jwt}`,
             },
@@ -58,7 +58,7 @@ const DashboardItem = () => {
             })
 
         // completed count
-        axios.get(`http://localhost:5000/purchases/count?email=${user.email}&completed=true`, {
+        axios.get(`https://tech-top.herokuapp.com/purchases/count?email=${user.email}&completed=true`, {
             headers: {
                 Authorization: `Bearer ${JSON.parse(sessionStorage.getItem('token')).jwt}`,
             },
