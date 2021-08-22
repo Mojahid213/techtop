@@ -97,7 +97,7 @@ const PaymentForm = () => {
             cogoToast.success('', {
                 heading: 'Purchased Successfully'
             });
-            history.push("/profile/dashboard");
+            history.push("/");
         }
     };
 
