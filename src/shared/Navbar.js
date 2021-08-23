@@ -16,9 +16,14 @@ const Navbar = () => {
     useEffect(() => {
         const menus = document.getElementById('Menu_list');
         const btn = document.getElementById('the_btn');
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
             menus.classList.toggle('hidden');
             menus.classList.toggle('block');
+        })
+        document.addEventListener('click', () => {
+            menus.classList.add('hidden');
+            menus.classList.remove('block');
         })
         const profilePic = document.getElementById('profile_pic');
         if (profilePic) {
