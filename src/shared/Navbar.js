@@ -17,18 +17,14 @@ const Navbar = () => {
         const menus = document.getElementById('Menu_list');
         const btn = document.getElementById('the_btn');
         btn.addEventListener('click', (e) => {
-            e.stopPropagation();
             menus.classList.toggle('hidden');
             menus.classList.toggle('block');
         })
-        document.addEventListener('click', () => {
-            menus.classList.add('hidden');
-            menus.classList.remove('block');
-        })
         const profilePic = document.getElementById('profile_pic');
+        const profileCard = document.getElementById('profile_card');
         if (profilePic) {
-            const profileCard = document.getElementById('profile_card');
-            profilePic.addEventListener('click', () => {
+            profilePic.addEventListener('click', (e) => {
+                e.stopPropagation();
                 profileCard.classList.toggle('hidden');
                 profileCard.classList.toggle('block');
             })
