@@ -21,8 +21,8 @@ const Navbar = () => {
             menus.classList.toggle('block');
         })
         const profilePic = document.getElementById('profile_pic');
-        const profileCard = document.getElementById('profile_card');
         if (profilePic) {
+            const profileCard = document.getElementById('profile_card');
             profilePic.addEventListener('click', (e) => {
                 e.stopPropagation();
                 profileCard.classList.toggle('hidden');
