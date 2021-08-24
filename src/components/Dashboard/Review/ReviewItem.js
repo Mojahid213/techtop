@@ -82,7 +82,7 @@ const ReviewItem = () => {
 
     const handleClick = () => {
         setModal(false);
-        history.push('/')
+        history.push('/profile/dashboard')
     }
 
     console.log(loading);
@@ -135,7 +135,7 @@ const ReviewItem = () => {
                 <hr className="mt-1" />
                 <p className="font-Signika mt-5 text-justify">Thanks for giving us your valuable feedback. It will be pending for approval and will be published soon</p>
                 <div className="flex justify-center mt-3">
-                    <button onClick={handleClick} className="px-5 py-2 font-Signika rounded-lg bg-black text-white ring-black focus:ring-2 focus:ring-offset-2 transition duration-300">Go back to Home</button>
+                    <button onClick={handleClick} className="px-5 py-2 font-Signika rounded-lg bg-black text-white ring-black focus:ring-2 focus:ring-offset-2 transition duration-300">Go to Dashboard</button>
                 </div>
             </Modal>
         </div>
