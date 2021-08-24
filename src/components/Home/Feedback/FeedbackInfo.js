@@ -5,7 +5,7 @@ const FeedbackInfo = ({ detail }) => {
         <div className="max-w-md py-4 mx-2 px-6 bg-white border shadow-lg rounded-lg my-16">
             <div className="flex justify-center md:justify-end -mt-16">
                 {detail.image &&
-                    <img className="w-20 h-20 object-cover rounded-full border-2 border-cs-black" src={`https://tech-top.herokuapp.com${detail.image.url}`} alt="" />
+                    <img className="w-20 h-20 object-cover rounded-full border-2 border-cs-black" src={detail.image} alt="" />
                 }
                 {detail.avatar &&
                     <div>
