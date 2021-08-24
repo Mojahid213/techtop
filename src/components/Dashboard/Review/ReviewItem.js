@@ -39,7 +39,8 @@ const ReviewItem = () => {
                     avatar: details.avatar,
                     company: details.company,
                     position: details.position,
-                    description: details.description
+                    description: details.description,
+                    published_at: null
                 },
                 {
                     headers: {
