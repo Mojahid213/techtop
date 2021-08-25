@@ -6,6 +6,7 @@ import FeedbackInfo from './FeedbackInfo';
 import axios from 'axios';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
+import Sceleton from './Sceleton';
 
 
 
@@ -51,25 +52,7 @@ const Feedback = () => {
             },
         ]
     };
-    if (loading) {
-        return (
-            <div className="mt-20">
-                {/* Section Heading */}
-                <div className="text-center mb-5">
-                    <h1 className="text-4xl font-Signika uppercase font-extrabold">Clients <span className="text-indigo-900">Feedback</span></h1>
-                    <p className="font-Ubuntu text-lg">Valuable feedback given by our clients</p>
-                </div>
-                <div className="flex justify-center">
-                    <Loader
-                        type="ThreeDots"
-                        color="#000000"
-                        height={100}
-                        width={100}
-                    />
-                </div>
-            </div>
-        )
-    }
+
     return (
         <div className="mt-20">
             {/* Section Heading */}
@@ -77,13 +60,20 @@ const Feedback = () => {
                 <h1 className="text-4xl font-Signika uppercase font-extrabold">Clients <span className="text-indigo-900">Feedback</span></h1>
                 <p className="font-Ubuntu text-lg">Valuable feedback given by our clients</p>
             </div>
-            {/* review swiper */}
+            {/* Sceleton or review swiper */}
             <div>
-                <Slider {...settings} className=" overflow-x-hidden">
-                    {
-                        review.map(detail => <FeedbackInfo detail={detail} key={detail.id}></FeedbackInfo>)
-                    }
-                </Slider>
+                {loading ?
+                    <Slider {...settings} className="overflow-x-hidden">
+                        {
+                            [1, 2, 3, 4, 5].map(detail => <Sceleton detail={detail} key={detail}></Sceleton>)
+                        }
+                    </Slider>
+                    : <Slider {...settings} className="overflow-x-hidden">
+                        {
+                            review.map(detail => <FeedbackInfo detail={detail} key={detail.id}></FeedbackInfo>)
+                        }
+                    </Slider>
+                }
             </div>
         </div>
     );
