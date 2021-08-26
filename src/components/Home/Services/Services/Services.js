@@ -10,7 +10,7 @@ const Services = () => {
         axios.get('https://tech-top.herokuapp.com/services')
             .then(response => {
                 setData(response.data);
-                setLoading(true)
+                setLoading(false)
             })
     }, [])
 
