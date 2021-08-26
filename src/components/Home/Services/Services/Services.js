@@ -10,7 +10,7 @@ const Services = () => {
         axios.get('https://tech-top.herokuapp.com/services')
             .then(response => {
                 setData(response.data);
-                setLoading(false)
+                setLoading(true)
             })
     }, [])
 
@@ -24,7 +24,7 @@ const Services = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-center text-center gap-7 md:gap-10 px-10 sm:px-20 lg:px-32">
                     {
                         [1, 2, 3].map((detail) =>
-                            <div key={detail} className="flex flex-1 flex-col border-2 border-gray-700 px-2 py-2 h-full shadow-lg transform sm:transform-gpu hover:scale-105 transition duration-500 ease-in-out cursor-pointer">
+                            <div key={detail} className="flex flex-1 flex-col border px-2 py-2 h-full shadow-lg transform sm:transform-gpu hover:scale-105 transition duration-500 ease-in-out cursor-pointer">
                                 <div className="h-full animate-pulse">
                                     <div className="rounded-md mx-auto h-60 bg-gray-400 mb-2"></div>
                                     <div className="rounded-md h-12 bg-gray-400 mx-auto"></div>

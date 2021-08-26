@@ -19,7 +19,7 @@ const Feedback = () => {
         axios.get('https://tech-top.herokuapp.com/reviews')
             .then(response => {
                 setReview(response.data);
-                setLoading(false)
+                setLoading(true)
             })
     }, [])
     const settings = {

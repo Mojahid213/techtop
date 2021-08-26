@@ -2,7 +2,7 @@ import React from 'react';
 
 const Sceleton = () => {
     return (
-        <div className="animate-pulse max-w-md py-4 mx-3 px-6 bg-white border border-gray-900 shadow-lg rounded-lg my-16">
+        <div className="animate-pulse max-w-md py-4 mx-3 px-6 bg-white border shadow-lg rounded-lg my-16">
             {/* Image Scalaton */}
             <div className="flex justify-center md:justify-end -mt-16">
                 <div>
