@@ -54,7 +54,7 @@ const Feedback = () => {
     };
 
     return (
-        <div className="mt-20">
+        <div className="mt-24">
             {/* Section Heading */}
             <div className="text-center mb-5">
                 <h1 className="text-4xl font-Signika uppercase font-extrabold">Clients <span className="text-indigo-900">Feedback</span></h1>

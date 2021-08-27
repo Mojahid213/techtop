@@ -3,7 +3,7 @@ import supportImg from '../../../assets/Img/support.png'
 
 const Support = () => {
     return (
-        <div className="mt-4 px-10 bg-blue-50 pt-10 pb-20 lg:pb-0">
+        <div className="mt-8 px-10 bg-blue-50 pt-10 pb-20 lg:pb-0">
             <div className="text-center mb-10 md:mb-2">
                 <h1 className="text-4xl font-Signika uppercase font-extrabold">our <span className="text-indigo-900">supports</span></h1>
             </div>
