@@ -6,6 +6,7 @@ import Services from '../Services/Services/Services';
 import Feedback from '../Feedback/Feedback';
 import Support from '../Support/Support';
 import Footer from '../../../shared/Footer';
+import Faq from '../Faq/Faq';
 
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
                 <Services></Services>
             </div>
             <Feedback></Feedback>
+            <Faq></Faq>
             <div id="support">
                 <Support></Support>
             </div>
