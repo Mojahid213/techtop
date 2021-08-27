@@ -42,7 +42,7 @@ const Item = ({ title, children }) => {
 
 export const Faq = () => {
     return (
-        <div className="px-4 py-14 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-16">
+        <div className="px-4 py-12 sm:py-14 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-16">
             <div className="mb-14 text-center font-Signika font-extrabold text-4xl px-5">
                 <h1 className="uppercase">Frequently <span className="font-Signika text-indigo-800">asked</span></h1>
             </div>
