@@ -6,8 +6,8 @@ import Services from '../Services/Services/Services';
 import Feedback from '../Feedback/Feedback';
 import Support from '../Support/Support';
 import Footer from '../../../shared/Footer';
+// import FaqItems from '../Faq/FaqItems';
 import Faq from '../Faq/Faq';
-
 
 const Home = () => {
     return (
@@ -19,6 +19,7 @@ const Home = () => {
                 <Services></Services>
             </div>
             <Feedback></Feedback>
+            {/* <FaqItems></FaqItems> */}
             <Faq></Faq>
             <div id="support">
                 <Support></Support>
