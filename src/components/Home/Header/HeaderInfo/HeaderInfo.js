@@ -15,7 +15,7 @@ const HeaderInfo = () => {
                 </div>
                 {/* The content image */}
                 <div className="justify-center flex flex-1 items-center z-10">
-                    <img className=" w-11/12 lg:w-4/5" src={BanngerImg} alt="" />
+                    <img className="w-11/12 lg:w-4/5" src={BanngerImg} alt="" />
                 </div>
             </div>
             <div className="hidden md:block md:h-56 lg:h-64 w-2/4 rounded-l-full overflow-hidden absolute right-0 md:top-28 lg:top-1/4 bg-cs-black bg-opacity-80"></div>
