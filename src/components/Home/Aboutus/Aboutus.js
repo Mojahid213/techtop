@@ -13,7 +13,7 @@ const Aboutus = () => {
                 {/* ------ The content div ----- */}
                 <div data-aos="fade-down" data-aos-duration="1500" className="flex flex-col flex-1 justify-center items-center text-center lg:text-left">
                     <h1 className="text-3xl sm:text-4xl font-RobotoSlab font-bold leading-snug">A TEAM OF AMAZING PEOPLE WHO WORK FOR AMAZING PEOPLE</h1>
-                    <p className="font-Ubuntu text-lg font-semibold leading-relaxed mt-5">TechTop is an online service providing website that provides services like Web-Development, Digital Marketing and Graphic Design to help people to start or grow their online-based business or startup. There are a group of skilled people waiting to help people with the services.</p>
+                    <p className="font-Ubuntu sm:font-bold sm:text-lg leading-relaxed mt-5">TechTop is an online service providing website that provides services like Web-Development, Digital Marketing and Graphic Design to help people to start or grow their online-based business or startup. There are a group of skilled people waiting to help people with the services.</p>
                 </div>
             </div>
             <div className="absolute hidden md:block overflow-hidden h-56 lg:h-64 w-2/4 rounded-r-full left-0 md:top-56 lg:top-1/3 bg-cs-black bg-opacity-80"></div>

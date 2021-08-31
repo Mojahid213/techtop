@@ -11,7 +11,7 @@ const Support = () => {
                 {/* content */}
                 <div className="flex flex-1 flex-col justify-center items-center text-center md:text-left md:pt-5">
                     <h1 className="uppercase text-3xl md:text-4xl font-RobotoSlab font-extrabold">get the support whenever you want.</h1>
-                    <p className="font-Ubuntu mt-3 md:mt-5">We give support for 24/7 days. Whether you want any technical support or want to know more about our company, you can get out support at any time. Feel free to take any support for any kind of service we provide.</p>
+                    <p className="font-Ubuntu sm:font-bold mt-3 md:mt-5">We give support for 24/7 days. Whether you want any technical support or want to know more about our company, you can get out support at any time. Feel free to take any support for any kind of service we provide.</p>
                     <button className="text-white bg-cs-black px-5 py-3 text-lg font-bold rounded-lg mt-6 hover:bg-cs-ebony transition duration-300">Get Support</button>
                 </div>
                 {/* image */}
