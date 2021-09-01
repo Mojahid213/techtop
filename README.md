@@ -5,9 +5,9 @@
 <br/>
 *** Signup or log in with ***
 <br/>
-Email: user@gmail.com
+>Email: user@gmail.com
 <br/>
-Password: user@1
+>Password: user@1
 
 Live Preview: https://techtop.netlify.app/
 
