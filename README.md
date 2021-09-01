@@ -1,4 +1,4 @@
-**** A react and Strapi(Node.js CMS) project ****
+**** TechTop(react and Strapi(Node.js CMS) project) ****
 -----------------------------------------------------
 
 Frontend: HTML, Tailwind CSS, JavaScript and React.js    
