@@ -4,6 +4,8 @@
 >Backend: Strapi and Heroku
 
 #### Signup or log in with -
+`Email: user@gmail.com`
+`Password: user@1`
 
 Live Preview: https://techtop.netlify.app/
 
