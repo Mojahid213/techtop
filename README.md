@@ -4,7 +4,7 @@
 >Backend: Strapi and Heroku
 <br/>
 <br/>
-###### Signup or log in with -<br/>
+### Signup or log in with -<br/>
 Email: user@gmail.com<br/>
 Password: user@1
 
