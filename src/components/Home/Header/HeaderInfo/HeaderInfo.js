@@ -19,6 +19,7 @@ const HeaderInfo = () => {
                 </div>
             </div>
             <div className="hidden md:block md:h-56 lg:h-64 w-2/4 rounded-l-full overflow-hidden absolute right-0 md:top-28 lg:top-1/4 bg-cs-black bg-opacity-80"></div>
+            <div className="block xs:hidden absolute top-16 xxs:top-20 xss:top-24 right-0 h-32 xxs:h-36 xss:h-40 w-10/12 bg-cs-black bg-opacity-80 rounded-l-full"></div>
         </div>
     );
 };

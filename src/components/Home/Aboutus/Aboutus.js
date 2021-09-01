@@ -17,6 +17,7 @@ const Aboutus = () => {
                 </div>
             </div>
             <div className="absolute hidden md:block overflow-hidden h-56 lg:h-64 w-2/4 rounded-r-full left-0 md:top-56 lg:top-1/3 bg-cs-black bg-opacity-80"></div>
+            <div className="block xs:hidden absolute top-36 xxs:top-40 xss:top-44 left-0 rounded-r-full h-36 xxs:h-40 xss:h-44 w-10/12 bg-cs-black bg-opacity-80"></div>
         </div>
     );
 };
