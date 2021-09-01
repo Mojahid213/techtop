@@ -3,7 +3,7 @@
 >Frontend: HTML, Tailwind CSS, JavaScript and React.js    
 >Backend: Strapi and Heroku
 <br/>
-*** Signup or log in with -***
+*** Signup or log in with ***
 Email: user@gmail.com
 <br/>
 Password: user@1
