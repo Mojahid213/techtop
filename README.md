@@ -7,5 +7,5 @@
 `Email: user@gmail.com`
 `Password: user@1`
 
-Live Preview: https://techtop.netlify.app/
+[Live Website](https://techtop.netlify.app/ "TechTop's Homepage")
 
