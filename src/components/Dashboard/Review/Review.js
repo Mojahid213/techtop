@@ -30,7 +30,7 @@ const Review = () => {
     }
 
     useEffect(() => {
-        axios.get(`https://tech-top.herokuapp.com/purchases/count?email=${user.email}`, {
+        axios.get(`${process.env.REACT_APP_API_URL}/purchases/count?email=${user.email}`, {
             headers: {
                 Authorization: `Bearer ${JSON.parse(sessionStorage.getItem('token')).jwt}`,
             },

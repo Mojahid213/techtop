@@ -46,7 +46,7 @@ const Login = () => {
         if (SignStatus.signup && IsValid.firstname && IsValid.lastname && IsValid.email && IsValid.password && IsValid.confirmpass) {
             setLoading(true);
             const theUserName = IsValid.firstname + " " + IsValid.lastname;
-            axios.post('https://tech-top.herokuapp.com/auth/local/register', {
+            axios.post(`${process.env.REACT_APP_API_URL}/auth/local/register`, {
                 username: theUserName,
                 email: IsValid.email,
                 password: IsValid.password,
@@ -102,7 +102,7 @@ const Login = () => {
         // ...For the Login...
         if (!SignStatus.signup && IsValid.email && IsValid.password) {
             setLoading(true);
-            axios.post('https://tech-top.herokuapp.com/auth/local', {
+            axios.post(`${process.env.REACT_APP_API_URL}/auth/local`, {
                 identifier: IsValid.email,
                 password: IsValid.password,
             })

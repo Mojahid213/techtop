@@ -77,7 +77,7 @@ const PaymentForm = () => {
                 heading: error.message
             });
         } else {
-            axios.post('https://tech-top.herokuapp.com/purchases',
+            axios.post(`${process.env.REACT_APP_API_URL}/purchases`,
                 {
                     name: info.name,
                     email: info.email,

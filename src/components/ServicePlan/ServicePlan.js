@@ -28,7 +28,7 @@ const ServicePlan = () => {
     // Fetching data from api
     const [details, setDetails] = useState([]);
     useEffect(() => {
-        axios.get(`https://tech-top.herokuapp.com/${category}`)
+        axios.get(`${process.env.REACT_APP_API_URL}/${category}`)
             .then(res => {
                 setDetails(res.data);
                 setLoading(false);

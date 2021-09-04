@@ -7,7 +7,7 @@ const Services = () => {
     const [data, setData] = useState([]);
     const [Loading, setLoading] = useState(true);
     useEffect(() => {
-        axios.get('https://tech-top.herokuapp.com/services')
+        axios.get(`${process.env.REACT_APP_API_URL}/services`)
             .then(response => {
                 setData(response.data);
                 setLoading(false)

@@ -33,7 +33,7 @@ const ReviewItem = () => {
         setLoading(true);
         if (details.name && details.avatar && details.description) {
             // sending data to server
-            axios.post('https://tech-top.herokuapp.com/reviews',
+            axios.post(`${process.env.REACT_APP_API_URL}/reviews`,
                 {
                     name: details.name,
                     avatar: details.avatar,

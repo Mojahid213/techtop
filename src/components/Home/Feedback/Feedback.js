@@ -16,7 +16,7 @@ const Feedback = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('https://tech-top.herokuapp.com/reviews')
+        axios.get(`${process.env.REACT_APP_API_URL}/reviews`)
             .then(response => {
                 setReview(response.data);
                 setLoading(false)

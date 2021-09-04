@@ -50,7 +50,7 @@ function App() {
   const [user, dispatch] = useReducer(reducer, initialState);
   useEffect(() => {
     if (JSON.parse(sessionStorage.getItem('token'))) {
-      axios.get('https://tech-top.herokuapp.com/users/me', {
+      axios.get(`${process.env.REACT_APP_API_URL}/users/me`, {
         headers: {
           Authorization: `Bearer ${JSON.parse(sessionStorage.getItem('token')).jwt}`
         }
