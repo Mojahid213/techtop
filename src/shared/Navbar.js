@@ -24,6 +24,7 @@ const Navbar = () => {
         })
         const profilePic = document.getElementById('profile_pic');
         const profileCard = document.getElementById('profile_card');
+        const NotificationCard = document.getElementById('notification');
         if (profilePic) {
             profilePic.addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -33,15 +34,20 @@ const Navbar = () => {
                 NotificationCard.classList.add('hidden');
             })
         }
+    }, [])
+
+    useEffect(() => {
+        const profileCard = document.getElementById('profile_card');
         const NotificationIcon = document.getElementById('notificationIcon');
         const NotificationCard = document.getElementById('notification');
-        NotificationIcon.addEventListener('click', () => {
-            NotificationCard.classList.toggle('hidden');
-            NotificationCard.classList.toggle('block');
-            profileCard.classList.remove('block');
-            profileCard.classList.add('hidden');
-        })
-
+        if (NotificationIcon) {
+            NotificationIcon.addEventListener('click', () => {
+                NotificationCard.classList.toggle('hidden');
+                NotificationCard.classList.toggle('block');
+                profileCard.classList.remove('block');
+                profileCard.classList.add('hidden');
+            })
+        }
     }, [])
 
     useEffect(() => {
