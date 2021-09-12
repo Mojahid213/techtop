@@ -97,17 +97,15 @@ const Navbar = () => {
                             </span>
                             {/* Notification card */}
                             <div id="notification" className="hidden absolute px-1 h-20 w-64 md:w-80 top-8 md:top-11 right-1/4 -mr-20 xxs:-mr-10 xss:-mr-0 md:-right-3 bg-white border rounded-lg shadow-md text-black z-30">
-                                <Scrollbars style={{ width: '100%', height: '100%' }}>
-                                    <div className="flex gap-4 md:gap-5 border-0 py-3 justify-center items-center">
-                                        <div className="text-4xl md:text-5xl flex justify-center items-center text-green-500">
-                                            <FontAwesomeIcon icon={faCheckSquare} />
-                                        </div>
-                                        <div className="flex flex-col justify-center items-center">
-                                            <p className="text-lg md:text-xl capitalize font-RobotoSlab text-left">No Notification</p>
-                                            <p className="text-sm md:text-base lowercase font-Signika">You have no notification for now</p>
-                                        </div>
+                                <div className="flex gap-4 md:gap-5 border-0 py-3 justify-center items-center">
+                                    <div className="text-4xl md:text-5xl flex justify-center items-center text-green-500">
+                                        <FontAwesomeIcon icon={faCheckSquare} />
                                     </div>
-                                </Scrollbars>
+                                    <div className="flex flex-col justify-center items-center">
+                                        <p className="text-lg md:text-xl capitalize font-RobotoSlab text-left">No Notification</p>
+                                        <p className="text-sm md:text-base lowercase font-Signika">You have no notification for now</p>
+                                    </div>
+                                </div>
                             </div>
                         </li>
                     }
