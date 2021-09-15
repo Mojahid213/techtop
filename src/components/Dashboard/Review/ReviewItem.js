@@ -85,9 +85,6 @@ const ReviewItem = () => {
         history.push('/profile/dashboard')
     }
 
-    console.log(loading);
-
-
     return (
         <div className="flex justify-center">
             <form onSubmit={handleSubmit} className="max-w-lg w-full px-4 py-5 border-2 border-black shadow-lg rounded-lg mt-5 mb-5">
